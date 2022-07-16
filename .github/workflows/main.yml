@@ -1,0 +1,13 @@
+
+name: Test
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install dependencies
+      run: |
+        sudo apt install wget
+        sudo wget https://raw.githubusercontent.com/HeroTest5/Heroku-Test/main/rclone.sh
+        sudo chmod 777 rclone.sh
+        sudo bash rclone.sh
